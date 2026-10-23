@@ -67,8 +67,17 @@ h1,h2,h3{font-family:var(--fuente-titulo); font-weight:600; margin:0 0 .5em;}
 .slide-texto .boton{margin-top:18px;}
 
 .slide-cumple{background:radial-gradient(circle at 78% 40%, var(--rosa), var(--crema) 62%);}
+.slide-cumple {
+  background: url("../img/torta-cumple.jpg") center / cover no-repeat;
+}
 .slide-cajas{background:radial-gradient(circle at 78% 40%, var(--celeste), var(--crema) 62%);}
+.slide-cajas {
+  background: url("../img/cajas-regalo.jpg") center / cover no-repeat;
+}
 .slide-pan{background:radial-gradient(circle at 78% 40%, var(--durazno), var(--crema) 62%);}
+.slide-pan {
+  background: url("../img/pan-artesanal.jpg") center / cover no-repeat;
+}
 
 .slider-flecha{
   position:absolute; top:50%; translate:0 -50%; z-index:3;
@@ -105,20 +114,39 @@ h1,h2,h3{font-family:var(--fuente-titulo); font-weight:600; margin:0 0 .5em;}
 .categoria-chip{
   flex:0 0 150px; height:110px; border-radius:var(--radio); position:relative;
   display:flex; align-items:flex-end; text-decoration:none; overflow:hidden;
-  box-shadow:0 4px 14px rgba(91,71,89,.08); transition:transform var(--transicion), box-shadow var(--transicion);
+  box-shadow:0 4px 14px rgba(250, 137, 207, 0.945); transition:transform var(--transicion), box-shadow var(--transicion);
 }
 .categoria-chip:hover{transform:translateY(-5px); box-shadow:var(--sombra);}
 .categoria-chip span{
-  position:relative; z-index:2; color:var(--texto); font-weight:600; font-size:.92rem;
-  padding:12px; text-shadow:0 1px 2px rgba(255,255,255,.4);
+  position:relative; z-index:2; color:var(#ff06ac); font-weight:600; font-size:.92rem;
+  padding:12px; text-shadow:0 1px 2px rgb(255, 255, 255);
 }
 .categoria-chip::before{content:""; position:absolute; inset:0;}
 .cat-cumple::before{background:linear-gradient(160deg,#FBDCE8,var(--rosa-fuerte));}
+.cat-cumple::before {
+  background: url("https://plus.unsplash.com/premium_photo-1663839412026-51a44cfadfb8?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D") center / cover no-repeat;
+}
+
 .cat-tortas::before{background:linear-gradient(160deg,#FDE8D3,var(--durazno));}
+.cat-tortas::before {
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV11UgzMeoZJeO7il5Yx_iwNmNcDevzgQW10sUgIbja7VUZGjHOTl56bY&s=10") center / cover no-repeat;
+}
 .cat-cupcakes::before{background:linear-gradient(160deg,#FDF6D3,var(--amarillo));}
+.cat-cupcakes::before {
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0US1XBxgkq__bqTE0xGcQjgequx7k7a26L7Pakq_KJpx8iiFr7jhVzkfP&s=10") center / cover no-repeat;
+}
 .cat-alfajores::before{background:linear-gradient(160deg,#EAE1F7,var(--lavanda));}
+.cat-alfajores::before {
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNO57piR3EkXJSK3Pblj39CotAqH2yrOj-LgnU61YLVGn3-NJyOH3o4S2-&s=10") center / cover no-repeat;
+}
 .cat-pan::before{background:linear-gradient(160deg,#F5E9D6,#E8CFA0);}
+.cat-pan::before {
+  background: url("https://irp.cdn-website.com/8af471c9/dms3rep/multi/pan+artesanal+de+centeno.jpeg") center / cover no-repeat;
+}
 .cat-cajas::before{background:linear-gradient(160deg,#DCF0E8,var(--menta));}
+.cat-cajas::before {
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_0QlFh3KwAb0Q_jpn97Lzsqpy8mWS8KxmNOj-ejatYA&s=10") center / cover no-repeat;
+}
 
 /* ---------- Pie de página tipo "mapa del sitio" ---------- */
 .pie-mapa{background:var(--texto); color:#F3E8F0; padding:48px 0 20px;}

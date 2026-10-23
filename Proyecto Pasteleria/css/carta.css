@@ -72,13 +72,37 @@ h1,h2,h3{font-family:var(--fuente-titulo); font-weight:600; margin:0 0 .3em;}
 
 .tp-imagen{height:150px; position:relative;}
 .tp-choco{background:linear-gradient(135deg,#E9D3DC,#C98FA6);}
+.tp-choco {
+  background: url("/img/torta\ chico.jpeg") center / cover no-repeat;
+}
 .tp-vainilla{background:linear-gradient(135deg,#FDF6D3,var(--amarillo));}
+.tp-vainilla {
+  background: url("/img/torta\ vainilla.jpeg") center / cover no-repeat;
+}
 .tp-carrot{background:linear-gradient(135deg,#FDE8D3,var(--durazno));}
+.tp-carrot {
+  background: url("/img/carrot.jpeg") center / cover no-repeat;
+}
+
 .tp-redvelvet{background:linear-gradient(135deg,var(--rosa),var(--rosa-fuerte));}
+.tp-redvelvet {
+  background: url("/img/red\ velvet.jpeg") center / cover no-repeat;
+}
+
 .tp-cupcakes{background:linear-gradient(135deg,#FDF6D3,var(--amarillo));}
+.tp-cupcakes {
+  background: url("/img/cupcakes.jpg") center / cover no-repeat;
+}
 .tp-alfajores{background:linear-gradient(135deg,#EAE1F7,var(--lavanda));}
+.tp-alfajores {
+  background: url("/img/alfajore.jpeg") center / cover no-repeat;
+}
 .tp-pan{background:linear-gradient(135deg,#F5E9D6,#E8CFA0);}
+.tp-pan {
+  background: url("/img/masa\ madre.jpeg") center / cover no-repeat;
+}
 .tp-cajas{background:linear-gradient(135deg,#DCF0E8,var(--menta));}
+
 
 /* Corazón de favoritos en CSS puro, sin emoji */
 .tp-favorito{
