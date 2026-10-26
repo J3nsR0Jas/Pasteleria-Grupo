@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestra carta — Pastelería Delicia</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/carta.css">
+</head>
+<body class="bg-body-tertiary">
+
+<header class="encabezado sticky-top" id="encabezado">
+  <div class="contenedor barra-nav d-flex align-items-center justify-content-between py-3">
+    <div class="nav-izquierda d-flex align-items-center gap-4">
+      <a href="index.html" class="marca fw-bold text-decoration-none fs-4">Pastelería <span class="fg-primary">Delicia</span></a>
+      <ul class="nav-links d-flex gap-3 list-unstyled m-0 p-0">
+        <li><a href="carta.html" class="text-decoration-none fw-semibold">Nuestra carta</a></li>
+      </ul>
+    </div>
+
+    <div class="acciones-derecha d-flex align-items-center gap-3">
+      <div class="buscador d-flex align-items-center">
+        <span class="buscador-icono" aria-hidden="true"></span>
+        <input type="text" id="campo-busqueda" placeholder="¿Qué buscas?" autocomplete="off">
+      </div>
+      <a href="login.html" class="btn btn-outline-dark rounded-pill fw-bold px-3">Iniciar sesión</a>
+    </div>
+  </div>
+
+  <nav class="tabs-categorias" aria-label="Categorías de productos">
+    <div class="contenedor tabs-pista d-flex gap-2 py-1" id="tabs-pista">
+      <button class="tab activa" data-categoria="tortas">Tortas</button>
+      <button class="tab" data-categoria="cupcakes">Cupcakes</button>
+      <button class="tab" data-categoria="alfajores">Alfajores</button>
+      <button class="tab" data-categoria="pan">Pan artesanal</button>
+      <button class="tab" data-categoria="cajas">Boxes regalo</button>
+    </div>
+  </nav>
+</header>
+
+<main class="seccion-carta py-5">
+  <div class="contenedor">
+    <h1 id="titulo-categoria" class="fw-bold fs-2 text-dark mb-1">Tortas</h1>
+    <p id="subtitulo-categoria" class="text-muted fs-6 mb-4">12 porciones — 20 cm de diámetro aprox.</p>
+    <p class="sin-resultados alert alert-warning" id="sin-resultados">No encontramos productos con ese nombre.</p>
+    <div class="rejilla-productos" id="rejilla-productos">
+
+      <div class="tarjeta-col" data-categoria="tortas" data-nombre="torta choco fudge">
+        <article class="tarjeta-producto h-100 border rounded-3 overflow-hidden bg-white shadow-sm d-flex flex-column">
+          <div class="tp-imagen tp-choco position-relative">
+            <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+          </div>
+          <div class="tp-cuerpo p-3 d-flex flex-column flex-grow-1 justify-content-between">
+            <div>
+              <h3 class="fs-6 fw-bold text-dark mb-1">Torta Choco Fudge</h3>
+              <p class="tp-descripcion small text-muted mb-2">Torta de chocolate rellena con fudge casero, cubierta con fudge y frutos rojos.</p>
+            </div>
+            <div class="tp-pie d-flex align-items-center justify-content-between mt-3">
+              <span class="tp-precio fw-bold">S/ 89.90</span>
+              <button class="btn btn-sm btn-outline-purple rounded-pill fw-semibold">Ver más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="tarjeta-col" data-categoria="tortas" data-nombre="torta vainilla clasica">
+        <article class="tarjeta-producto h-100 border rounded-3 overflow-hidden bg-white shadow-sm d-flex flex-column">
+          <div class="tp-imagen tp-vainilla position-relative">
+            <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+          </div>
+          <div class="tp-cuerpo p-3 d-flex flex-column flex-grow-1 justify-content-between">
+            <div>
+              <h3 class="fs-6 fw-bold text-dark mb-1">Torta Vainilla Clásica</h3>
+              <p class="tp-descripcion small text-muted mb-2">Bizcocho de vainilla clásico, relleno de manjar blanco y cubierto con chantilly.</p>
+            </div>
+            <div class="tp-pie d-flex align-items-center justify-content-between mt-3">
+              <span class="tp-precio fw-bold">S/ 79.90</span>
+              <button class="btn btn-sm btn-outline-purple rounded-pill fw-semibold">Ver más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="tarjeta-col" data-categoria="tortas" data-nombre="carrot cake">
+        <article class="tarjeta-producto h-100 border rounded-3 overflow-hidden bg-white shadow-sm d-flex flex-column">
+          <div class="tp-imagen tp-carrot position-relative">
+            <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+          </div>
+          <div class="tp-cuerpo p-3 d-flex flex-column flex-grow-1 justify-content-between">
+            <div>
+              <h3 class="fs-6 fw-bold text-dark mb-1">Carrot Cake</h3>
+              <p class="tp-descripcion small text-muted mb-2">Esponjoso bizcocho de zanahoria con nueces, cubierto con frosting de queso crema.</p>
+            </div>
+            <div class="tp-pie d-flex align-items-center justify-content-between mt-3">
+              <span class="tp-precio fw-bold">S/ 95.00</span>
+              <button class="btn btn-sm btn-outline-purple rounded-pill fw-semibold">Ver más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="tarjeta-col" data-categoria="tortas" data-nombre="red velvet">
+        <article class="tarjeta-producto h-100 border rounded-3 overflow-hidden bg-white shadow-sm d-flex flex-column">
+          <div class="tp-imagen tp-redvelvet position-relative">
+            <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+          </div>
+          <div class="tp-cuerpo p-3 d-flex flex-column flex-grow-1 justify-content-between">
+            <div>
+              <h3 class="fs-6 fw-bold text-dark mb-1">Red Velvet</h3>
+              <p class="tp-descripcion small text-muted mb-2">Torta de tres capas de suave red velvet, con frosting de queso crema y frutos rojos.</p>
+            </div>
+            <div class="tp-pie d-flex align-items-center justify-content-between mt-3">
+              <span class="tp-precio fw-bold">S/ 99.00</span>
+              <button class="btn btn-sm btn-outline-purple rounded-pill fw-semibold">Ver más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="tarjeta-col" data-categoria="cupcakes" data-nombre="cupcakes surtidos">
+        <article class="tarjeta-producto h-100 border rounded-3 overflow-hidden bg-white shadow-sm d-flex flex-column">
+          <div class="tp-imagen tp-cupcakes position-relative">
+            <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+          </div>
+          <div class="tp-cuerpo p-3 d-flex flex-column flex-grow-1 justify-content-between">
+            <div>
+              <h3 class="fs-6 fw-bold text-dark mb-1">Cupcakes Surtidos</h3>
+              <p class="tp-descripcion small text-muted mb-2">Docena de cupcakes surtidos: vainilla, chocolate y red velvet.</p>
+            </div>
+            <div class="tp-pie d-flex align-items-center justify-content-between mt-3">
+              <span class="tp-precio fw-bold">S/ 72.00</span>
+              <button class="btn btn-sm btn-outline-purple rounded-pill fw-semibold">Ver más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="tarjeta-col" data-categoria="alfajores" data-nombre="alfajores">
+        <article class="tarjeta-producto h-100 border rounded-3 overflow-hidden bg-white shadow-sm d-flex flex-column">
+          <div class="tp-imagen tp-alfajores position-relative">
+            <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+          </div>
+          <div class="tp-cuerpo p-3 d-flex flex-column flex-grow-1 justify-content-between">
+            <div>
+              <h3 class="fs-6 fw-bold text-dark mb-1">Caja de Alfajores</h3>
+              <p class="tp-descripcion small text-muted mb-2">Caja de 12 alfajores con manjar blanco casero, cubiertos con coco o chocolate.</p>
+            </div>
+            <div class="tp-pie d-flex align-items-center justify-content-between mt-3">
+              <span class="tp-precio fw-bold">S/ 45.00</span>
+              <button class="btn btn-sm btn-outline-purple rounded-pill fw-semibold">Ver más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="tarjeta-col" data-categoria="pan" data-nombre="pan masa madre">
+        <article class="tarjeta-producto h-100 border rounded-3 overflow-hidden bg-white shadow-sm d-flex flex-column">
+          <div class="tp-imagen tp-pan position-relative">
+            <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+          </div>
+          <div class="tp-cuerpo p-3 d-flex flex-column flex-grow-1 justify-content-between">
+            <div>
+              <h3 class="fs-6 fw-bold text-dark mb-1">Pan de Masa Madre</h3>
+              <p class="tp-descripcion small text-muted mb-2">Pan de masa madre, fermentación de 18 horas, corteza crocante y miga húmeda.</p>
+            </div>
+            <div class="tp-pie d-flex align-items-center justify-content-between mt-3">
+              <span class="tp-precio fw-bold">S/ 12.00</span>
+              <button class="btn btn-sm btn-outline-purple rounded-pill fw-semibold">Ver más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="tarjeta-col" data-categoria="cajas" data-nombre="box regalo dulce">
+        <article class="tarjeta-producto h-100 border rounded-3 overflow-hidden bg-white shadow-sm d-flex flex-column">
+          <div class="tp-imagen tp-cajas position-relative">
+            <button class="tp-favorito" aria-label="Guardar en favoritos"><span class="corazon"></span></button>
+          </div>
+          <div class="tp-cuerpo p-3 d-flex flex-column flex-grow-1 justify-content-between">
+            <div>
+              <h3 class="fs-6 fw-bold text-dark mb-1">Box Regalo Dulce</h3>
+              <p class="tp-descripcion small text-muted mb-2">Caja especial con minitorta, alfajores y galletas decoradas.</p>
+            </div>
+            <div class="tp-pie d-flex align-items-center justify-content-between mt-3">
+              <span class="tp-precio fw-bold">S/ 65.00</span>
+              <button class="btn btn-sm btn-outline-purple rounded-pill fw-semibold">Ver más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="pie-mapa py-5">
+  <div class="contenedor pie-columnas">
+    <div class="pie-col">
+      <p class="pie-marca fw-bold fs-5">Pastelería <span>Delicia</span></p>
+      <p>En tu casa o en la nuestra, siempre horneado el mismo día. Gracias por preferirnos.</p>
+    </div>
+    <div class="pie-col">
+      <h4>Mapa del sitio</h4>
+      <a href="carta.html">Nuestra carta</a>
+      <a href="login.html">Iniciar sesión</a>
+    </div>
+    <div class="pie-col">
+      <h4>Categorías</h4>
+      <a href="carta.html?categoria=tortas">Tortas</a>
+      <a href="carta.html?categoria=cupcakes">Cupcakes</a>
+      <a href="carta.html?categoria=alfajores">Alfajores</a>
+      <a href="carta.html?categoria=pan">Pan artesanal</a>
+    </div>
+    <div class="pie-col">
+      <h4>Atención al cliente</h4>
+      <p>Huancayo, Perú</p>
+      <p>Ejemplo con fines didácticos.</p>
+    </div>
+  </div>
+  <p class="pie-copy text-center fs-7 mt-4">Pastelería Delicia © 2026 — material de referencia para la clase de Diseño Web.</p>
+</footer>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="js/carta.js"></script>
+</body>
+</html>
