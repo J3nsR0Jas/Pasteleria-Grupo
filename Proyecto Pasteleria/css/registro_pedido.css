@@ -1,180 +1,207 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap');
 
-/* ==========================================================================
-   1. VARIABLES DE TEMA Y COLORES
-   ========================================================================== */
 :root {
   --bs-primary: #6f42c1;
-  --bs-primary-rgb: 111, 66, 193;
-
-  --crema: #FAF7F2;
-  --crema-oscura: #EFE8DE;
-  --texto: #2D222E;
-  --texto-suave: #534554;
-  --morado-suave: #E2D5F8;
   --morado-fuerte: #6f42c1;
-  --blanco: #FFFFFF;
-
+  --morado-hover: #5a32a3;
+  --crema-bg: #FDF0F5;
+  --texto-principal: #2B212C;
+  --texto-secundario: #6C5B6E;
   --fuente-titulo: 'Fraunces', Georgia, serif;
-  --fuente-texto: 'Work Sans', system-ui, sans-serif;
-  --radio: 12px;
-  --sombra: 0 10px 30px rgba(111, 66, 193, 0.12);
-  --transicion: 220ms cubic-bezier(.4, 0, .2, 1);
-
-  --bs-body-font-family: var(--fuente-texto);
+  --fuente-cuerpo: 'Work Sans', system-ui, sans-serif;
+  --transicion-suave: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ==========================================================================
-   2. ESTILOS BASE Y NAVEGACIÓN
-   ========================================================================== */
-* {
-  box-sizing: border-box;
+body.bg-pagina {
+  background-color: var(--crema-bg) !important;
+  color: var(--texto-principal);
+  font-family: var(--fuente-cuerpo);
 }
 
-body {
-  margin: 0;
-  font-family: var(--fuente-texto);
-  color: var(--texto);
-  background: var(--crema);
-  line-height: 1.6;
-}
-
-h1, h2, h3 {
+h2 {
   font-family: var(--fuente-titulo);
-  font-weight: 600;
 }
 
 .contenedor {
-  width: min(1160px, 92%);
+  width: min(1160px, 90%);
   margin-inline: auto;
 }
 
-/* Encabezado */
+.fondo-animado {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.burbuja {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.45;
+  animation: flotar 12s infinite ease-in-out alternate;
+}
+
+.b1 {
+  width: 320px;
+  height: 320px;
+  background: #f1a7c4;
+  top: 5%;
+  left: -6%;
+  animation-duration: 11s;
+}
+
+.b2 {
+  width: 380px;
+  height: 380px;
+  background: rgba(111, 66, 193, 0.3);
+  bottom: 2%;
+  right: -8%;
+  animation-duration: 15s;
+}
+
+.b3 {
+  width: 240px;
+  height: 240px;
+  background: #fde0bc;
+  top: 40%;
+  left: 50%;
+  animation-duration: 10s;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-30px) scale(1.08) rotate(10deg); }
+  100% { transform: translateY(20px) scale(0.95) rotate(-10deg); }
+}
+
 .encabezado {
-  background: rgba(250, 247, 242, 0.96);
-  backdrop-filter: blur(6px);
-  transition: box-shadow var(--transicion);
+  background: rgba(253, 240, 245, 0.85) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(235, 210, 222, 0.7);
 }
 
-.encabezado.con-scroll {
-  box-shadow: 0 2px 14px rgba(61, 52, 62, 0.10);
+.fg-primary {
+  color: var(--bs-primary) !important;
 }
 
-.marca span, .fg-primary {
-  color: var(--morado-fuerte) !important;
+.btn-salir-hover {
+  transition: var(--transicion-suave);
 }
 
-.nav-links a {
-  color: var(--texto) !important;
+.btn-salir-hover:hover {
+  background-color: #2b212c !important;
+  color: #ffffff !important;
 }
 
-.nav-links a:hover {
-  border-bottom: 2px solid var(--morado-fuerte);
+.panel-formulario {
+  max-width: 580px;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 0 20px 45px -10px rgba(111, 66, 193, 0.12), 0 0 15px rgba(253, 240, 245, 0.5) !important;
+  transition: var(--transicion-suave);
+  animation: entradaTarjeta 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Botón principal violeta */
+.panel-formulario:hover {
+  transform: translateY(-6px) scale(1.005);
+  box-shadow: 0 30px 60px -12px rgba(111, 66, 193, 0.22) !important;
+}
+
+.icono-bienvenida {
+  font-size: 2.6rem;
+  animation: rebotar 2.5s infinite ease-in-out;
+}
+
+@keyframes rebotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes entradaTarjeta {
+  from { opacity: 0; transform: translateY(25px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.form-control, .form-select {
+  background-color: rgba(250, 250, 250, 0.9) !important;
+  border: 1.5px solid #E6DFD5 !important;
+  color: var(--texto-principal) !important;
+  font-size: 0.95rem;
+  transition: var(--transicion-suave) !important;
+}
+
+.form-control:hover, .form-select:hover {
+  border-color: #C2B7A8 !important;
+  background-color: #FFFFFF !important;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: #FFFFFF !important;
+  border-color: var(--bs-primary) !important;
+  box-shadow: 0 0 0 4px rgba(111, 66, 193, 0.2) !important;
+  transform: translateY(-2px);
+}
+
 .btn-primary {
-  background-color: var(--morado-fuerte) !important;
-  border-color: var(--morado-fuerte) !important;
+  background: linear-gradient(135deg, #7c4bc4 0%, #6f42c1 100%) !important;
+  border: none !important;
   color: #FFFFFF !important;
+  transition: var(--transicion-suave) !important;
+}
+
+.shadow-btn {
+  box-shadow: 0 8px 20px -4px rgba(111, 66, 193, 0.4);
 }
 
 .btn-primary:hover {
-  background-color: #5a32a3 !important;
-  border-color: #5a32a3 !important;
+  background: linear-gradient(135deg, #6f42c1 0%, #5a32a3 100%) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px -4px rgba(111, 66, 193, 0.55) !important;
 }
 
-/* ==========================================================================
-   3. PANEL Y FORMULARIO DE PEDIDO
-   ========================================================================== */
-.panel-formulario {
-  max-width: 540px;
-  background: var(--blanco);
-  border-radius: var(--radio) !important;
-  box-shadow: var(--sombra) !important;
-}
-
-.campo input, 
-.campo select, 
-.campo textarea {
-  background: var(--crema);
-  border: 1.5px solid var(--crema-oscura);
-  color: var(--texto);
-  font-size: 0.95rem;
-  transition: border-color var(--transicion), box-shadow var(--transicion);
-}
-
-.campo input:focus, 
-.campo select:focus, 
-.campo textarea:focus {
-  background: #FFFFFF;
-  border-color: var(--morado-fuerte);
-  box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.18);
-}
-
-/* Estados de los mensajes dinámicos */
-.mensaje-estado {
-  display: none;
-}
-
-.mensaje-estado.visible {
-  display: block;
-}
-
-.mensaje-estado.exito {
-  background: #EAF7ED;
-  color: #1E6B37;
-  border: 1px solid #BCE8C5;
-}
-
-.mensaje-estado.fallo {
-  background: #FCE8E8;
-  color: #A82828;
-  border: 1px solid #F5C2C2;
-}
-
-/* Animación del sello de confirmación al guardar pedido */
 .sello-confirmacion {
   display: none;
-  margin: 18px auto 4px;
-  width: 130px;
-  height: 130px;
+  margin: 20px auto 0;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  border: 3px solid #1E6B37;
-  color: #1E6B37;
+  border: 3.5px double #1A7336;
+  color: #1A7336;
   font-family: var(--fuente-titulo);
   font-weight: 700;
   text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: .82rem;
+  font-size: 0.85rem;
   line-height: 1.3;
-  transform: scale(.4) rotate(-18deg);
+  background: radial-gradient(circle, #f2faf3 0%, #e1f5e5 100%);
+  box-shadow: 0 10px 20px rgba(26, 115, 54, 0.15);
 }
 
 .sello-confirmacion.visible {
   display: flex;
-  animation: sellar 480ms cubic-bezier(.34, 1.56, .64, 1) forwards;
+  animation: sellar 500ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 @keyframes sellar {
-  0% { opacity: 0; transform: scale(.4) rotate(-18deg); }
+  0% { opacity: 0; transform: scale(0.3) rotate(-25deg); }
   70% { opacity: 1; transform: scale(1.08) rotate(-4deg); }
   100% { opacity: 1; transform: scale(1) rotate(-6deg); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .sello-confirmacion.visible {
-    animation: none;
-    transform: scale(1) rotate(-6deg);
-    opacity: 1;
-  }
+.link-animado {
+  color: var(--texto-secundario) !important;
+  transition: var(--transicion-suave);
 }
 
-/* ==========================================================================
-   4. PIE DE PÁGINA
-   ========================================================================== */
+.link-animado:hover {
+  color: var(--bs-primary) !important;
+}
+
 .pie {
-  background-color: #2D222E !important;
-  color: #FAF7F2 !important;
+  background-color: #231B24 !important;
+  color: #E2D9E3 !important;
 }

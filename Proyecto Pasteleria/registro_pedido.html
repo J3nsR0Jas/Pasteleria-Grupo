@@ -1,109 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pedido personalizado — Pastelería Delicia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido personalizado — Pastelería Delicia</title>
 
-<!-- 1. Cargar CSS de Bootstrap 6 -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-<!-- 2. Tu archivo CSS propio -->
-<link rel="stylesheet" href="css/registro_pedido.css">
+
+  <link rel="stylesheet" href="css/registro_pedido.css">
 </head>
-<body class="bg-body-tertiary d-flex flex-column min-vh-100">
+<body class="bg-pagina d-flex flex-column min-vh-100 position-relative overflow-x-hidden">
 
-<header class="encabezado sticky-top" id="encabezado">
-  <div class="contenedor barra-nav d-flex align-items-center justify-content-between py-3">
-    <a href="index.html" class="marca fw-bold text-decoration-none fs-4">Pastelería <span class="fg-primary">Delicia</span></a>
-    
-    <div class="d-flex align-items-center gap-3">
-      <ul class="nav-links list-unstyled m-0 p-0">
-        <li><a href="consulta_pedido.html" class="text-decoration-none fw-semibold">Mis pedidos</a></li>
-      </ul>
-      <button class="btn btn-outline-dark rounded-pill fw-bold px-3" id="boton-salir" type="button">Cerrar sesión</button>
+  <div class="fondo-animado">
+    <div class="burbuja b1"></div>
+    <div class="burbuja b2"></div>
+    <div class="burbuja b3"></div>
+  </div>
+
+  <header class="encabezado sticky-top shadow-sm" id="encabezado">
+    <div class="contenedor d-flex align-items-center justify-content-between py-3">
+      <a href="index.html" class="marca fw-bold text-decoration-none fs-4">Pastelería <span class="fg-primary">Delicia</span></a>
+      
+      <div class="d-flex align-items-center gap-3">
+        <ul class="nav-links list-unstyled m-0 p-0">
+          <li><a href="consulta_pedido.html" class="text-decoration-none fw-semibold link-animado">Mis pedidos</a></li>
+        </ul>
+        <button class="btn btn-outline-dark rounded-pill fw-bold px-3 btn-salir-hover" id="boton-salir" type="button">Cerrar sesión</button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="flex-grow-1 d-flex align-items-center py-5">
-  <div class="contenedor">
-    <div class="panel-formulario card border-0 shadow-sm mx-auto p-4 p-md-5">
-      <h2 class="fw-bold fs-3 text-dark text-center mb-4">Pedido personalizado</h2>
+  <main class="flex-grow-1 d-flex align-items-center py-5 position-relative z-1">
+    <div class="contenedor">
 
-      <form class="formulario d-flex flex-column gap-3" id="formulario-pedido" novalidate>
-        
-        <div class="campo">
-          <label for="nombre-cliente" class="form-label fw-semibold text-dark fs-7 mb-1">Nombre completo</label>
-          <input type="text" id="nombre-cliente" name="nombreCliente" class="form-control form-control-lg rounded-3" placeholder="Tu nombre y apellido" required>
-          <span class="error text-danger small mt-1 d-block" id="error-nombre-cliente"></span>
+      <div class="panel-formulario card border-0 mx-auto p-4 p-md-5 rounded-5">
+        <div class="text-center mb-4">
+          <span class="icono-bienvenida d-inline-block mb-2">🎂</span>
+          <h2 class="fw-bold fs-3 text-dark m-0">Pedido personalizado</h2>
+          <p class="text-muted small">Diseñamos tu postre especial tal como lo imaginas</p>
         </div>
 
-        <div class="campo">
-          <label for="telefono" class="form-label fw-semibold text-dark fs-7 mb-1">Teléfono (9 dígitos)</label>
-          <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" class="form-control form-control-lg rounded-3" placeholder="987654321" required>
-          <span class="error text-danger small mt-1 d-block" id="error-telefono"></span>
-        </div>
+        <form class="formulario d-flex flex-column gap-3" id="formulario-pedido" novalidate>
+          
+          <div class="campo position-relative">
+            <label for="nombre-cliente" class="form-label fw-semibold text-dark fs-7 mb-1">Nombre completo</label>
+            <input type="text" id="nombre-cliente" name="nombreCliente" class="form-control form-control-lg rounded-4 px-3" placeholder="Tu nombre y apellido" required>
+            <span class="error text-danger small mt-1 d-block" id="error-nombre-cliente"></span>
+          </div>
 
-        <div class="campo">
-          <label for="tipo-producto" class="form-label fw-semibold text-dark fs-7 mb-1">Tipo de producto</label>
-          <select id="tipo-producto" name="tipoProducto" class="form-select form-select-lg rounded-3" required>
-            <option value="" disabled selected>Selecciona una opción</option>
-            <option value="torta">Torta de cumpleaños</option>
-            <option value="cupcakes">Cupcakes por docena</option>
-            <option value="pan">Pan artesanal por encargo</option>
-            <option value="alfajores">Alfajores por caja</option>
-          </select>
-          <span class="error text-danger small mt-1 d-block" id="error-tipo-producto"></span>
-        </div>
+          <div class="campo position-relative">
+            <label for="telefono" class="form-label fw-semibold text-dark fs-7 mb-1">Teléfono (9 dígitos)</label>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" class="form-control form-control-lg rounded-4 px-3" placeholder="987654321" required>
+            <span class="error text-danger small mt-1 d-block" id="error-telefono"></span>
+          </div>
 
-        <div class="campo">
-          <label for="tamano" class="form-label fw-semibold text-dark fs-7 mb-1">Tamaño / cantidad</label>
-          <select id="tamano" name="tamano" class="form-select form-select-lg rounded-3" required>
-            <option value="" disabled selected>Selecciona una opción</option>
-            <option value="pequeno">Pequeño</option>
-            <option value="mediano">Mediano</option>
-            <option value="grande">Grande</option>
-          </select>
-          <span class="error text-danger small mt-1 d-block" id="error-tamano"></span>
-        </div>
+          <div class="campo position-relative">
+            <label for="tipo-producto" class="form-label fw-semibold text-dark fs-7 mb-1">Tipo de producto</label>
+            <select id="tipo-producto" name="tipoProducto" class="form-select form-select-lg rounded-4 px-3" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="torta">Torta de cumpleaños</option>
+              <option value="cupcakes">Cupcakes por docena</option>
+              <option value="pan">Pan artesanal por encargo</option>
+              <option value="alfajores">Alfajores por caja</option>
+            </select>
+            <span class="error text-danger small mt-1 d-block" id="error-tipo-producto"></span>
+          </div>
 
-        <div class="campo">
-          <label for="sabor" class="form-label fw-semibold text-dark fs-7 mb-1">Sabor</label>
-          <input type="text" id="sabor" name="sabor" class="form-control form-control-lg rounded-3" placeholder="Ej. Chocolate, Vainilla, Red Velvet" required>
-          <span class="error text-danger small mt-1 d-block" id="error-sabor"></span>
-        </div>
+          <div class="campo position-relative">
+            <label for="tamano" class="form-label fw-semibold text-dark fs-7 mb-1">Tamaño / cantidad</label>
+            <select id="tamano" name="tamano" class="form-select form-select-lg rounded-4 px-3" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="pequeno">Pequeño</option>
+              <option value="mediano">Mediano</option>
+              <option value="grande">Grande</option>
+            </select>
+            <span class="error text-danger small mt-1 d-block" id="error-tamano"></span>
+          </div>
 
-        <div class="campo">
-          <label for="mensaje-torta" class="form-label fw-semibold text-dark fs-7 mb-1">Mensaje para decorar (opcional)</label>
-          <textarea id="mensaje-torta" name="mensajeTorta" class="form-control rounded-3" rows="3" maxlength="150" placeholder="Ej. ¡Feliz Cumpleaños María!"></textarea>
-        </div>
+          <div class="campo position-relative">
+            <label for="sabor" class="form-label fw-semibold text-dark fs-7 mb-1">Sabor</label>
+            <input type="text" id="sabor" name="sabor" class="form-control form-control-lg rounded-4 px-3" placeholder="Ej. Chocolate, Vainilla, Red Velvet" required>
+            <span class="error text-danger small mt-1 d-block" id="error-sabor"></span>
+          </div>
 
-        <div class="campo">
-          <label for="fecha-entrega" class="form-label fw-semibold text-dark fs-7 mb-1">Fecha de entrega</label>
-          <input type="date" id="fecha-entrega" name="fechaEntrega" class="form-control form-control-lg rounded-3" required>
-          <span class="error text-danger small mt-1 d-block" id="error-fecha-entrega"></span>
-        </div>
+          <div class="campo position-relative">
+            <label for="mensaje-torta" class="form-label fw-semibold text-dark fs-7 mb-1">Mensaje para decorar (opcional)</label>
+            <textarea id="mensaje-torta" name="mensajeTorta" class="form-control rounded-4 px-3 py-2" rows="3" maxlength="150" placeholder="Ej. ¡Feliz Cumpleaños María!"></textarea>
+          </div>
 
-        <button type="submit" class="btn btn-primary rounded-pill fw-bold py-2 mt-3 w-100 fs-6">Confirmar pedido</button>
-        
-        <div class="mensaje-estado rounded-3 p-3 text-center fs-7 mt-2" id="mensaje-pedido"></div>
-        <div class="sello-confirmacion" id="sello-confirmacion"></div>
-      </form>
+          <div class="campo position-relative">
+            <label for="fecha-entrega" class="form-label fw-semibold text-dark fs-7 mb-1">Fecha de entrega</label>
+            <input type="date" id="fecha-entrega" name="fechaEntrega" class="form-control form-control-lg rounded-4 px-3" required>
+            <span class="error text-danger small mt-1 d-block" id="error-fecha-entrega"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary rounded-pill fw-bold py-3 mt-3 w-100 fs-6 shadow-btn">
+            <span>Confirmar pedido</span>
+          </button>
+          
+          <div class="mensaje-estado rounded-4 p-3 text-center fs-7 mt-2" id="mensaje-pedido"></div>
+          <div class="sello-confirmacion" id="sello-confirmacion"></div>
+        </form>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
 
-<footer class="pie py-4 bg-dark text-light mt-auto">
-  <div class="contenedor text-center opacity-75 fs-7">
-    <p class="m-0">Pastelería Delicia · Huancayo, Perú · Ejemplo con fines didácticos.</p>
-  </div>
-</footer>
+  <footer class="pie py-4 bg-dark text-light mt-auto position-relative z-1">
+    <div class="contenedor text-center opacity-75 fs-7">
+      <p class="m-0">Pastelería Delicia · Huancayo, Perú · Ejemplo con fines didácticos.</p>
+    </div>
+  </footer>
 
-<!-- JavaScript de Bootstrap 6 -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
-<!-- Tu JavaScript original sin ningún cambio -->
-<script type="module" src="js/registro_pedido.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script type="module" src="js/registro_pedido.js"></script>
 </body>
 </html>
